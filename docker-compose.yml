@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  l4d2-server:
+    image: goforbroke1006/l4d2-server:latest
+    environment:
+      L4D2_SERVER_HOSTNAME: "L4D2 server in docker-compose"
+      L4D2_SERVER_PASSWORD: "123456"
+      L4D2_SERVER_MAX_PLAYERS: 16
+    ports:
+      - "27015:27015/tcp"
+      - "27015:27015/udp"
