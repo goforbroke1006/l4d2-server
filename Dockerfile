@@ -24,10 +24,10 @@ RUN mkdir ~/steamcmd                                                && \
     tar -xf steamcmd_linux.tar.gz                                   && \
     rm steamcmd_linux.tar.gz
 RUN echo "Installing L4D2 app version $STEAM_APP_ID ..."
-RUN bash ~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/l4d +app_update $STEAM_APP_ID validate +quit
+RUN bash ~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/games +app_update $STEAM_APP_ID validate +quit
 
 ENV L4D2_SERVER_HOSTNAME='l4d2'
-ENV L4D2_SERVER_PASSWORD=''
+ENV L4D2_SERVER_SV_REGION=255
 ENV L4D2_SERVER_MAX_PLAYERS=4
 
 COPY ./entrypoint.sh /entrypoint.sh
